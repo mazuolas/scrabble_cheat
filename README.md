@@ -26,5 +26,9 @@ Specifications are as follows:
 * To give a greater appearance of credibility, a generated bogus word should randomly have between 1 and 4 definitions.
 * Bogus words and definitions stored by the app should expire 2 hours after they are created, except as provided elsewhere.
 * If a searched word is prepended with an empty space and the word is not a valid Scrabble word but is an existing word in the app's store, the word's expiration time should be reset (i.e., expire in 2 hours)
-* Definitions should be presented in substantially the following format: (1) <definition>; (2) <definition>; ...
+* Definitions should be presented in substantially the following format: (1) [first definition]; (2) [second definition]; ...
 * For cross-checking valid words and retrieving definitions, you can use the wordnik gem (we'll send you an api key to use). It should return a bunch of definitions for any given word -- you can just select up to the first 6 to display to the user. Feel free to make the API request inline.
+
+# Submitting
+
+Clone the repo. Create a branch. Implement the app. Push your branch up. Let us know you completed the challenge.
