@@ -22,10 +22,10 @@ The app serves to help people cheat at Scrabble. A user can "plant" a gibberish 
 Specifications are as follows:
 
 * A search for a word should return a page showing the word. If the word is a valid dictionary word or exists within the app's bogus word store, the definition should also be displayed. If the word does not exist in either the dictionary or the store, the page should indicate the word is not valid.
-* If a searched word is prepended with an empty space and the word is not a valid Scrabble word nor an existing word in the app's store: (1) the word should be planted in the app's store accompanied with a bogus dictionary definition or definitions (use the included literate_randomizer gem), and (2) the request should return a page with the word and the newly generated bogus definition(s).
+* If a searched word is prepended with an empty space and the word is neither a valid Scrabble word nor an existing word in the app's store: (1) the word should be planted in the app's store accompanied with a bogus dictionary definition or definitions (use the included literate_randomizer gem), and (2) the request should return a page with the word and the newly generated bogus definition(s).
 * To give a greater appearance of credibility, a generated bogus word should randomly have between 1 and 4 definitions.
-* Bogus words and definitions stored by the app should expire 2 hours after they are created, except as provided elsewhere.
-* If a searched word is prepended with an empty space and the word is not a valid Scrabble word but is an existing word in the app's store, the word's expiration time should be reset (i.e., expire in 2 hours)
+* Bogus words and definitions stored by the app should expire 2 hours after they are created, except as otherwise provided by these rules.
+* If a searched word is prepended with an empty space and the word is not a valid Scrabble word but the word is an existing word in the app's store, the word's expiration time should be reset (i.e., expire in 2 hours)
 * Definitions should be presented in substantially the following format: (1) [first definition]; (2) [second definition]; ...
 * For cross-checking valid words and retrieving definitions, you can use the wordnik gem (we'll send you an api key to use). It should return a bunch of definitions for any given word -- you can just select up to the first 6 to display to the user. Feel free to make the API request inline.
 
