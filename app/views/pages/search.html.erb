@@ -1,2 +1,8 @@
 <h1><%= @searched_word %></h1>
+<h3>Definitions:</h3>
+<ul>
+  <% @definitions.each do |definition|%>
+    <li><%= definition%></li>
+  <%end%>
+</ul>
 <%= link_to('Search Again', '/')  %>

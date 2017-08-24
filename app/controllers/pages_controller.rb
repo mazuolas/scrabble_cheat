@@ -6,6 +6,7 @@ class PagesController < ApplicationController
 
   def search
     @searched_word = search_params[:query]
+    @definitions = ["test1", 'test2', 'test3']
   end
 
   private
