@@ -6,7 +6,12 @@ class PagesController < ApplicationController
 
   def search
     @searched_word = search_params[:query]
-    @definitions = ["test1", 'test2', 'test3']
+    @definitions = Word.definition(@searched_word)
+    if @definitions.empty?
+      render :word_not_found
+    else
+      render :search
+    end
   end
 
   private

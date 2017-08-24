@@ -1,8 +1,9 @@
 class Word < ApplicationRecord
-  validates :word, :def0 presence: true
+  validates :word, :def0, presence: true
 
   def self.definition(word)
     #return definition if there is one
+    Wordnik.word.get_definitions(word)
   end
 
   def self.add_fake_word(word)
