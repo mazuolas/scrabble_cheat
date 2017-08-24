@@ -22,9 +22,14 @@ class Word < ApplicationRecord
 
   def self.add_fake_word(word)
     #add word to fake word DB or update time
-    fake_word = Word.new
-    fake_word.word = word.downcase
-    fake_word.def0 = LiterateRandomizer.sentence
+    fake_word = Word.find_by(word: word)
+    if fake_word
+      fake_word.updated_at = Time.now
+    else
+      fake_word = Word.new
+      fake_word.word = word.downcase
+      fake_word.def0 = LiterateRandomizer.sentence
+    end
     fake_word.save
   end
 end
