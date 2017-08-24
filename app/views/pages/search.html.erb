@@ -2,7 +2,7 @@
 <h3>Definitions:</h3>
 <ul>
   <% @definitions.first(6).each do |definition|%>
-    <li><%= definition["text"]%></li>
+    <li><%= definition %></li>
   <%end%>
 </ul>
 <%= link_to('Search Again', '/')  %>
