@@ -14,6 +14,8 @@ class Word < ApplicationRecord
     definitions = Wordnik.word.get_definitions(word).map {|wordnik| wordnik["text"] }
     if definitions.empty?
       fake_word = Word.find_by(word: word.downcase)
+      #fake word too old
+      return [] if fake_word && fake_word.updated_at > Time.now - 2.hours
       definitions = fake_word ? fake_word.definitions : []
     end
 
